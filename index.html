@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Semantics</title>
+    <style>
+        *:not(fieldset, legend, label, input, .section-label){
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 10px;
+        }
+        body{
+            max-width: 1200px;
+            margin: auto;
+        }
+        .container{
+            display: flex;
+            
+            flex-direction: row;
+            gap: 20px;
+        }
+        aside{
+            width: 250px;
+        }
+        main{
+            flex-grow: 1;
+        }
+
+        @media (max-width: 746px) {
+            .container{
+                flex-direction: column;
+            }
+            .container aside {
+                width: auto;
+                flex-grow: 1;
+            }
+        }
+        
+        span{
+            color:aqua;
+        }
+    </style>
+</head>
+    <body>
+        &lt;body&gt; tag is used as the whole website container
+        <header>
+            &lt;header&gt; can be used as the container for the main menu
+            <nav>
+                &lt;nav&gt; contains the navigation or anchor tag
+            </nav>
+        </header>
+        <div class="container">
+            <aside>
+                &lt;aside&gt;
+            </aside>
+            <main>
+            &lt;main&gt;
+                <section>
+                    &lt;section&gt; tag defines a section in a document
+                </section>
+
+                <section>
+                    <h2 class="section-label">Headings</h2>
+                    <h1>&lt;h1&gt;</h1>
+                    <h2>&emsp;&lt;h2&gt;</h2>
+                    <h3>&emsp;&emsp;&emsp;&lt;h3&gt;</h3>
+                    <h4>&emsp;&emsp;&emsp;&emsp;&emsp;&lt;h4&gt;</h4>
+                    <h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;h5&gt;</h5>
+                    <h6>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;h6&gt;</h6>
+                    <h3>&emsp;&emsp;&emsp;&lt;h3&gt;</h3>
+                    <h2>&emsp;&lt;h2&gt;</h2>
+                    <h3>&emsp;&emsp;&emsp;&lt;h3&gt;</h3>
+                    <h3>&emsp;&emsp;&emsp;&lt;h3&gt;</h3>
+                    <h3>&emsp;&emsp;&emsp;&lt;h3&gt;</h3>
+                </section>
+                
+                <section>
+                    <h2 class="section-label">Text Contents</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, aspernatur?</p>
+                    <p><span>&lt;span&gt; tag to style inside p tag</span><strong>&lt;strong&gt; tag for bold</strong><i>&lt;i&gt; tag for italic</i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>&lt;br /&gt; tag for line break.</p>
+                    <pre>&lt;pre&gt; tag means Preformatted text.
+                        element is displayed in a fixed-width font, and the text preserves both spaces and line breaks
+Ipsum, obcaecati.</pre>
+                </section>
+                <section>
+                    <h2 class="section-label">List</h2>
+                    <ol>&lt;ol&gt; means ordered list
+                        <li>Item A</li>
+                        <li>Item B</li>
+                        <li>Item C</li>
+                    </ol>
+                    <ul>&lt;ul&gt; means unordered list (bullet points)
+                        <li>Item A</li>
+                        <li>Item B</li>
+                        <li>Item C</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="section-label">Article/Blog</h2>
+                    &lt;section&gt; tag defines a section in a document
+                    <article>&lt;article&gt; should make sense on its own and it should be possible to distribute it independently from
+                        the rest of the site. Can contain other text tags like h2, p, li, img, etc.</article>
+                </section>
+                <section>
+                    <h2 class="section-label">Image</h2>
+                    
+                    <figure>
+                        &lt;figure&gt;element to mark up a photo in a document
+                        <img src="https://via.placeholder.com/300x150.png" alt="">
+                        <figcaption>
+                            &lt;figcaption&gt; element to define a caption for the photo:
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2 class="section-label">Forms</h2>
+                    <form action="..."> &lt;form&gt; is used for submitting information, below you have &lt;input&gt;, and &lt;label&gt; tag to accept data 
+                        <fieldset>
+                            <legend>&lt;fieldset&gt; is used to group related elements in a form. and &lt;legend&gt; as label of the group</legend>
+                            <label for="fname">First name:</label>
+                            <input type="text" id="fname" name="fname"><br><br>
+                            <label for="lname">Last name:</label>
+                            <input type="text" id="lname" name="lname"><br><br>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email"><br><br>
+                            <label for="birthday">Birthday:</label>
+                            <input type="date" id="birthday" name="birthday"><br><br>
+                            <textarea ></textarea><br><br>
+                            <input type="submit" value="Submit">
+                        </fieldset>
+                    </form>
+                </section>
+            </main>
+        </div>
+        <footer>&lt;footer&gt; can contains other tags and also nav tag if there are navigation
+            <nav>
+                &lt;nav&gt; contains the navigation or anchor tag
+            </nav>
+        </footer>
+    </body>
+</html>
